@@ -1,0 +1,52 @@
+	SPRING MVC
+
+	1.Spring MVC - Definição
+	O Spring MVC é um framework Java que ajuda no desenvolvimento de aplicações Web. Ele, como a grande maioria dos frameworks modernos, usa o padrão MVC.
+
+	2.WEB XML
+	É assim que funciona qualquer aplicação web em Java. Alguém deve receber a requisição que é feita pelo usuário. No caso do Spring, um servlet é quem deve receber. Por isso, precisamos configurá-lo para que todas as requisições passem por ele.
+
+
+
+
+
+SPRING BOOT
+	1. Spring boot - Pra que serve
+		A melhor definição do Spring Boot é: Agilizar no desenvolvimento de aplicação com configurações default/padrão.
+
+	Controller, Request mapping
+	Anotações usadas no Spring MVC
+
+	2. Instalação do Spring 
+	Assim como qualquer outra framework, utilizando o maven acessamos a pasta pom.XML
+	e em <dependencies>
+	colocamos a framework, depois fechamos a </dependencies>
+
+	3. Servidor, container
+	Criamos uma classe java chamada Configuracao e lá criamos um método. Dentro dele, digitamos 
+	SpringApplication.run(classe.class, args); 
+	Isso fara o spring rodar as configurações padrão definidas na classe SpringApplication.
+	Temos que definir a classe como Controller
+
+	@Controller
+	public class classe {
+
+	} 
+	E então, só subir a aplicação na porta localhost:8080/ que é a padrão do container tomcat
+
+	4. @RequestBody
+	Onde colocamos o codigo 
+	String ola () {
+		return "Ola. Esta funcionando";    
+	}
+
+	4.1 RequestMapping
+
+
+	4.2 Controller
+
+	4.3 Id
+	Para falar que o atributo é uma chave primaria
+
+	4.4 GeneratedValue
+	Para falar que é gerado o valor automaticamente

@@ -1,0 +1,267 @@
+Java
+
+
+Versions 
+
+1. Metodo de saida do java
+System.out.println("");
+
+Assim como o printf(""); na linguagem C
+
+
+Essa é a classe:
+
+class programa {
+	
+	public static void main(String [] args) {
+
+
+
+	}
+}
+
+
+
+2.Atalhos do eclipse
+
+// comenta uma linha
+
+Ctrl + espaço cria um atalho
+Ctrl a + Ctrl i para identar o seu projeto
+Ctrl O ver atalho de classes
+
+
+3.Tipos de variável
+double tipo flutuante
+
+int inteiro
+
+boolean verdadeiro ou falso
+
+4. 
+
+
+5.Estruturas de Laços 
+
+for (inicialização ; condição booleana; ) {
+
+}
+
+
+
+6.Laços encadeados
+
+
+
+Orientação a Objetos
+
+
+1.Classes
+É uma especificação de algo concreto. Como uma planta de um objeto.
+public class nomeDaClasse {
+
+
+
+
+
+1.1 Objetos
+Instancião, atributos e referênciação
+Tirar do papel, depois de instanciar algo. Surge um objeto  
+
+new nomeDaClasse();
+
+para atribuir um valor no atributo de um objeto, temos que criar uma variavel.
+
+Conta primeiraConta = new Conta();
+primeiraConta.saldo=20 0;
+
+Exemplo: Nessa estrutura, primeiraConta é a variavel, Conta é o Objeto e saldo o atributo. 
+
+
+Na orientação a objetos, a variavel já vem com valor padrão =0;
+
+
+
+1.2  Referência
+Você direcionar uma variavel a um objeto. Duas variaveis podem se referenciar ao mesmo objeto
+
+
+1.3 Metodos 
+Um método defini o que um objeto sabe fazer.
+Exemplos: Transferir, sacar, depositar
+
+void metodo(parametro) {
+
+}
+
+
+3.Composição de objetos. Associando objetos
+
+
+
+3.1 Referência NULL
+
+Vázio. Um lugar não populado.
+
+
+
+4.Atributos privados
+
+private 
+
+Não pode ser lido e nem modificado por ninguém a não ser a propria classe. Um atributo privado nao pode ser lido ou modificado por ninguem a nao ser ele mesmo
+
+ Dono dos dados do objeto é o proprio objeto. Principio fundamental de Encapsulamento.
+
+ Para exibir os dados antes era apenas dar o comando System.out.println(variavel.atributo);
+ Agora, temos que invocar um metodo 
+ 	retorno.getSaldo(parametro){
+ 		return this.saldo;
+
+ 	}
+
+5.Get and Sets
+get
+retorno.getSaldo(parametro){
+ 		return this.Atributo;
+
+ 	}
+
+set
+	public void setNumero(int numero) {
+		this.numero = numero;
+
+		ou seja
+
+		tipo da classe retorno setVariavel(tipo da variavel variavel){
+			referencia ao atributo.atributo = variavel;
+		}
+
+
+	5.2 Exibição de gets e Sets
+	System.out.println(variavel.getAtributo());
+
+
+	5.3
+	Exibição de get and set
+
+	Em uma conta de banco, onde o objeto é Conta, e os atributos da classe Conta são Agencia, Numero, Titular e Numero. Também há sentido ter um objeto
+	chamado Cliente, onde a classe Cliente teria os atributos nome, cpf e profissao. Titular de Conta, é um atributo do tipo Cliente, por que é como se fosse uma chave estrangeira.
+		
+		//cria o objeto
+	Conta contaPobre = new Conta();
+		//atribui um valor de um atributo a uma variavel local
+		 contaPobre.setNumero(2);
+		 //e vincula a conta com esse o valor. Assim, o exibindo
+		System.out.println(contaPobre.getNumero());
+
+		//Falando teoricamente                                                          
+																												    Objeto=Conta      variavel=contaPobre 
+																												    Atributo=Numero   valor=2  parametro=nenhum
+
+		Objeto variavel  = new Objeto(parametro);
+		variavel .setAtributo(valor);
+		System.out.println(variavel.getVariavel());
+
+
+}
+
+
+	5.4 Objeto inconscistente
+Ao criar um objeto, ele nasce com um valor default=0 ou null que pode ser inconscistente com uma regra de negócios.
+
+
+
+	55. Construtor
+	Rotina de inicialização, é diferente de um metodo. Até por que ele só pode funcionar no momento de criação 
+	Um objeto só tem UM construtor
+
+	public Objeto (tipo do atributo atributo, tipo de atributo atributo) {
+		this.atributo = numero;
+		this.atributo = atributo;
+
+		
+
+
+	}
+
+	5.5 Static 
+
+	Não é uma instancia, é uma variavel global. variavel da classe
+
+	 visibilidade do atributo tipo do atributo Static atributo;
+
+	 private int Static total;
+
+	 7. Herança - extends
+
+	 7.1 Herança de classes - Construtor, Metodos e Atributos
+	 A classe filha herda os atributos e métodos da classse mãe, porém, não herda os construtores. Quando não houver um construtor padrão, 
+	 utilize o super para falar que vc esta chamando a classe mae.
+
+	 public Classe(tipo de atributo atributo, tipo de atributo atributo){
+	 		super(atributo, atributo);
+
+
+	 7.2 Polimorfismo
+	 Temos polimorfismo quando uma classe extende de outra ou também quando uma classe implementa uma interface.
+
+	 através de super deixamos claro que queremos acessar um membro da classe mãe.
+	7.2  @Override
+	É uma anotação. Uma mensagem destinada ao sistema. É usada para fazer reescrita o método da classe mãe, 
+	indicando que o método original foi alterado.
+	 }
+
+
+
+	 7.3 Classes Abstract
+	 É errado criar um objeto funcionario, pois funcionario não é um objeto concreto. E sim, um conceito, algo Abstract(abstrato)
+
+	 public abstract class Funcionario {
+
+	 }
+
+	 7.4 Metodos Abstract
+	 Metodos sem corpo. Os filhos que dão a implementação.
+
+
+
+	 7.5 Classe Intermediária
+	 É um conceito de Herança 
+
+	 public class Admin extends FuncionarioAutentica {
+	 ao invés de public class Admin extends Funcionario {
+	 	Por que se não, EditorVideo e Designer conseguem acessar metodos de uma classe que não deveriam.
+	 	Como SistemaInterno.
+
+
+	 	Atalho = Comentar várias linhas: ctrl + shift + /
+
+
+	7.6 Interface 
+	Herança multipla não existe
+
+	7.7 Implements
+	Assinar um contrato. Ela é um contrato onde quem assina se responsabiliza por implementar esses métodos (cumprir o contrato)
+	não declara. Pois uma Interface não pode ter atributos ou metodos
+
+	agora podemos criar uma referencia do tipo da Intergitface
+
+	Interface variavel = new object ()
+
+	/
+
+
+
+
+
+
+	7.8 Composição
+
+
+
+
+
+
+
+
