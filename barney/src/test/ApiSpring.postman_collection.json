@@ -1,0 +1,206 @@
+{
+	"info": {
+		"name": "ApiSpring",
+		"_postman_id": "d776c3d3-dcff-fe63-f531-6e29521ca53a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"description": "",
+			"item": [
+				{
+					"name": "/user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{variable_key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{variable_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"asd\",\n\t\"password\":\"asdasd\",\n\t\"accountNonExpired\":\"\",\n\t\"accountNonLocked\":\"\",\n\t\"credentialsNonExpired\":\"\",\n\t\"enabled\":true,\n\t\"authorities\":[]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{variable_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n {\n    \"id\": 3,\n    \"username\": \"barnasdaey\",\n    \"password\": \"$2a$10$hUoGxUjvE9I2jI73a2p6.OoM8oN346vT9zNJlXJR8JHRJ5aV0CevG\",\n    \"accountNonExpired\": true,\n    \"accountNonLocked\": true,\n    \"credentialsNonExpired\": true,\n    \"enabled\": true,\n    \"authorities\": []\n },\n {\n    \"id\": 4,\n    \"username\": \"barneyasdasd\",\n    \"password\": \"$2a$10$hUoGxUjvE9I2jI73a2p6.OoM8oN346vT9zNJlXJR8JHRJ5aV0CevG\",\n    \"accountNonExpired\": true,\n    \"accountNonLocked\": true,\n    \"credentialsNonExpired\": true,\n    \"enabled\": true,\n    \"authorities\": []\n }\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/user/6",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{variable_key}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"id\": 1,\n    \"username\": \"barneylinsdo\",\n    \"password\": \"$2a$10$hUoGxUjvE9I2jI73a2p6.OoM8oN346vT9zNJlXJR8JHRJ5aV0CevG\",\n    \"accountNonExpired\": true,\n    \"accountNonLocked\": true,\n    \"credentialsNonExpired\": true,\n    \"enabled\": true,\n    \"authorities\": []\n }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"6"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6aa06ddf-0625-4d6d-9fe3-708669efb622",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"variable_key\", pm.response.json().data.token);",
+							"console.log(pm.environment.get(\"variable_key\"));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "consumer_key",
+						"value": "barney"
+					},
+					{
+						"key": "consumer_secret",
+						"value": "barney"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

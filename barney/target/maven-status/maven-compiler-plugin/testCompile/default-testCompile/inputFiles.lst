@@ -1,0 +1,9 @@
+/home/barney/dev/fontes/api-spring/src/test/java/br/com/dbas/api/ApiSpringApplicationTests.java
+/home/barney/dev/fontes/api-spring/src/test/java/br/com/dbas/api/security/repositories/PageRepositoryTest.java
+/home/barney/dev/fontes/api-spring/src/test/java/br/com/dbas/api/security/repositories/EndpointRepositoryTest.java
+/home/barney/dev/fontes/api-spring/src/test/java/br/com/dbas/api/security/services/UserServiceTest.java
+/home/barney/dev/fontes/api-spring/src/test/java/br/com/dbas/api/security/repositories/UserRepositoryTest.java
+/home/barney/dev/fontes/api-spring/src/test/java/br/com/dbas/api/utils/PasswordUtilsTest.java
+/home/barney/dev/fontes/api-spring/src/test/java/br/com/dbas/api/security/repositories/AuthoritiesRepositoryTest.java
+/home/barney/dev/fontes/api-spring/src/test/java/br/com/dbas/api/security/repositories/BaseRepositoryTest.java
+/home/barney/dev/fontes/api-spring/src/test/java/br/com/dbas/api/security/utils/JwtTokenUtilTest.java

@@ -1,0 +1,9 @@
+br/com/dbas/api/security/repositories/BaseRepositoryTest.class
+br/com/dbas/api/security/repositories/EndpointRepositoryTest.class
+br/com/dbas/api/security/repositories/UserRepositoryTest.class
+br/com/dbas/api/security/utils/JwtTokenUtilTest.class
+br/com/dbas/api/utils/PasswordUtilsTest.class
+br/com/dbas/api/ApiSpringApplicationTests.class
+br/com/dbas/api/security/repositories/PageRepositoryTest.class
+br/com/dbas/api/security/services/UserServiceTest.class
+br/com/dbas/api/security/repositories/AuthoritiesRepositoryTest.class

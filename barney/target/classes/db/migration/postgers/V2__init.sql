@@ -1,0 +1,34 @@
+--
+-- INSERT INTO api_spring.user (account_non_expired, account_non_locked, credentials_non_expired, enabled, password, username)
+-- VALUES (true, true, true, true, '$2a$10$hUoGxUjvE9I2jI73a2p6.OoM8oN346vT9zNJlXJR8JHRJ5aV0CevG', 'barney');
+--
+-- INSERT INTO api_spring.authority (authority, description) VALUES ('ADMIN', 'Usuario tem total acesso ao sistema');
+--
+-- INSERT INTO api_spring.page (description, name) VALUES ('CRUD User', 'USUARIO');
+-- INSERT INTO api_spring.page (description, name) VALUES ('CRUD Authority', 'AUTHORITY');
+--
+-- INSERT INTO api_spring.endpoint (description, http_method, url, page_id)
+-- select 'Inserir usuario', 'POST', '/user', id from api_spring.page as p where p.name = 'USUARIO';
+--
+--
+-- INSERT INTO api_spring.endpoint (description, http_method, url, page_id)
+-- select 'Remover usuario', 'DELETE', '/user', id from api_spring.page as p where  name = 'USUARIO';
+--
+-- INSERT INTO api_spring.endpoint (description, http_method, url, page_id)
+-- select 'Listar authority', 'GET', '/authority', id from api_spring.page as p where  name = 'USUARIO';
+--
+-- INSERT INTO api_spring.endpoint (description, http_method, url, page_id)
+-- select 'Listar usuario', 'GET', '/user', id from api_spring.page as p where  name = 'USUARIO';
+--
+-- INSERT INTO api_spring.endpoint (description, http_method, url, page_id)
+-- select 'Alterar usuarios', 'PUT', '/user', id from api_spring.page as p where  name = 'USUARIO';
+--
+-- INSERT INTO api_spring.endpoint (description, http_method, url, page_id)
+-- select 'Alterar usuario', 'PUT', '/user/{id}', id from api_spring.page as p where  name = 'USUARIO';
+--
+-- INSERT INTO api_spring.users_authorities (users_id, authorities_id) VALUES (1, 1);
+-- INSERT INTO api_spring.authority_endpoints (authority_id, endpoints_id) VALUES (1, 1);
+-- INSERT INTO api_spring.authority_endpoints (authority_id, endpoints_id) VALUES (1, 3);
+-- INSERT INTO api_spring.authority_endpoints (authority_id, endpoints_id) VALUES (1, 4);
+-- INSERT INTO api_spring.authority_endpoints (authority_id, endpoints_id) VALUES (1, 5);
+-- INSERT INTO api_spring.authority_endpoints (authority_id, endpoints_id) VALUES (1, 2);

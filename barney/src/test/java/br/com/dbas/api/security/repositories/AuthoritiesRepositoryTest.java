@@ -1,0 +1,40 @@
+package br.com.dbas.api.security.repositories;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@ActiveProfiles("test")
+@DirtiesContext
+public class AuthoritiesRepositoryTest extends BaseRepositoryTest {
+
+    @Autowired
+    private EndpointRepository endpointRepository;
+
+    @Autowired
+    private AuthoritiesRepository authoritiesRepository;
+
+    @Before
+    public void setUp() throws Exception {
+        getAuthorities(getEndpoint(getPage()));
+    }
+
+    @Test
+    public void findByAuthority() {
+        authoritiesRepository.findByAuthority("ADMIN");
+    }
+
+    @Test
+    public void findByEndpoints() {
+        authoritiesRepository.findByEndpoints(endpointRepository.findByUrl("/endpoint").get(0));
+    }
+
+
+}
