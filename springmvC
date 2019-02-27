@@ -1,0 +1,18 @@
+SPRING MVC
+
+1. JBOSS Forge
+
+Já vem um projeto java com as configurações basicas feitas.
+
+
+criar um projeto usando JBOSS Forge no terminal
+project-new --named nomedoprojeto
+
+Configurando o container web
+
+
+
+2. Controller
+
+
+@RequestMapping
