@@ -1,0 +1,173 @@
+SPRING MVC
+
+1. JBOSS Forge
+
+Já vem um projeto java com as configurações basicas feitas.
+
+
+criar um projeto usando JBOSS Forge no terminal
+project-new --named nomedoprojeto
+
+Configurando o container web
+
+
+
+2. Controller
+Precisar se certificar que as dependencias necessarias do spring estão no arquivo pom.xml
+se não, algumas anotações podem não serem encontradas. 
+ A cima da classe Controlller, coloque @Controller e dentro dela mapeei sua url
+
+
+2.1
+@RequestMapping 
+Para mapear a URL usamos o RequestMapping 
+
+@RequestMapping ("/")	
+				public void index () {
+					  System.out.println("Exibindo a home da CDC");
+        return "home";
+    }
+
+
+   2.2 SpringMvcConfig, classe de configuracao
+
+Mas, precisamos configurar o spring antes. Criar uma classe de configuracao	
+ e dentro dela,fazer ela herdar AbstractAnnotationConfigDispatcherServletInitializer
+ public class ConfiguracaoSpring extends AbstractAnnotationConfigDispatcherServletInitializer{
+Imprima 3 métodos, no segundo, altere para return new Class[] { AppWebConfiguration.class};
+
+
+Crie essa classe de configuracao de servel, com o mesmo nome, e coloque @EnableWebMvc
+@ComponentScan(basePackageClasses={HomeController.class})
+public class AppWebConfiguration {
+
+} dentro dela, crie um metodo internalResourceViewResolver e instancie EnableWebMvc
+
+@Bean
+public InternalResourceViewResolver internalResourceViewResolver() {
+    InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+    resolver.setPrefix("/WEB-INF/views/");
+    resolver.setSuffix(".jsp");
+    return resolver;
+}
+
+
+
+
+2.3 @EnableWebMvc
+
+
+2.4 @ComponentScaan(basePackageClasses={""}
+
+
+
+2.5 setPrefix
+Local onde a pagina estará
+
+2.6 setSuffix
+ Tipo de extenção de sua pagina, como .jsp, .html etc
+
+
+2.7 @Bean	
+Informa o spring que ele vai gerenciar esse método
+
+
+2.9 WEB INF
+Dentro de views ficam suas paginas, em um lugar onde o usuario não pode acessar. Crie a WEB-INF em src/main/webapp/WEB-INF/views
+Dentro dela, crie sua pagina do tipo que voce colocou no setSuffix pagina.setSuffix
+
+
+	3. ProdutosController
+Como queria criar outra pagina, arquivo .jsp, preciso criar outro controller
+	@RequestMapping("/produtos/form") 
+	
+	public String form () {
+		return "produtos/form";
+		
+	}
+
+
+	3.1 Formulario
+	Para fazer um formulario, é preciso criar um form em sua .jsp e no input, o name da label tem que ser o mesmo
+	da Referencia ou atributo java. 	<form action="/springmvc/produtos" method="POST">
+
+<div>
+	<label>Camisetas</label> <input type="text" name=camisetas>
+</div>
+<div>
+	<label>Tênis</label> <input type="text" name=tenis>
+</div>
+<div>
+	<label>Blusas</label> <input type="text" name=blusas>
+</div>
+	<button type ="submit">Cadastrar</button>
+	</form>
+
+	private String camisetas;
+		private String tenis;
+		private String blusas;
+
+
+		3.2 Getters and Setters e ToString()
+		Mas não é só declarar os atributos, precisamos colocar que eles sao privados e fazer os gets and set deles
+
+		Depois, o ToString
+		@Override
+		public String toString() {
+			return "Produto [camisetas=" + camisetas + ", tenis=" + tenis + ", blusas=" + blusas + "]";
+		}
+
+
+	3. DAO
+	Lugar das configuracoes de Acesso ao banco.
+
+
+
+	 4. JPA	
+
+	 @Entity
+
+	 @PersistenceContext
+
+
+	 @AutoWired
+
+
+    
+	 @Repository 
+
+
+	 Criar uma classe de configuracoes do banco
+
+
+	 JPAConfig
+
+
+	 public void entityManagerFactory () {
+	 	 LocalContainerEntityManagerFactoryBean factoryBean =
+	 	new LocalContainerEntityManagerFactoryBean ();
+
+	 }
+
+	 JpaVendoAdapter VendoAdapter = new HibernateJpaVendorAdapter();
+	 factoryBean.setJpaVendoAdapter(VendoAdapter);
+
+	 DriverManagerDataSource
+
+
+	 @Id
+
+
+	 @GeneratedValue
+
+	 @ComponentScan
+
+	 @EnableTransactionManagement 
+
+
+	 ENUM
+
+	 ElementCollection
+	 Embeddable
+
+
